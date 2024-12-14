@@ -1,28 +1,24 @@
 {
-    // Comments are accepted in the manifest, even though it is JSON.
     "manifest_version": 3,
-    "name": "Chrome Extension v3 Starter",
-    "description": "A minimal example of a chrome extension using manifest v3",
-    "version": "0.0.1",
+    "name": "Echo 300 Downloader",
+    "description": "A Chrome Extension to allow you to download any Echo 360 Lecture at Warwick",
+    "version": "1.0",
     "icons": {
         "16": "logo/logo-16.png",
         "48": "logo/logo-48.png",
         "128": "logo/logo-128.png"
     },
-    "options_page": "settings/settings.html",
     "action": {
-        "default_title": "Chrome Addon v3 Starter",
+        "default_title": "OOGA BOOGA",
         "default_popup": "popup/popup.html"
     },
-    "permissions": [],
     "host_permissions": [
-        "*://*/*"
+        "<all_urls>"
+    ],
+    "permissions": [
+        "webRequest"
     ],
     "background": {
-        "service_worker": "service-worker.js"
-    },
-    "content_scripts": [{
-        "js": ["foreground.js"],
-        "matches": ["https://github.com/*"]
-    }]
+        "service_worker": "background.js"
+    }
 }
